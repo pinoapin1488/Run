@@ -1,0 +1,130 @@
+:root {
+  --gap:12px;
+  --bg:#0f1a12;
+  --card:#1c2a20;
+  --accent:#2e4a34;
+  --accent-light:#3c5a42;
+  --text:#e4e6e3;
+  --muted:#889388;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  font-family: "Courier New", monospace;
+  background:var(--bg);
+  color:var(--text);
+  padding:16px;
+}
+h1{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#d4d7c7;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+h2{ font-size:16px; color:#c7d1c0; }
+.bar{ display:flex; gap:var(--gap); flex-wrap:wrap; margin-bottom:12px; }
+
+input,button{
+  font-size:16px; padding:10px 12px;
+  border-radius:6px; border:1px solid var(--accent);
+  background:var(--card); color:var(--text);
+}
+input::placeholder{ color:var(--muted); }
+button{
+  background:var(--accent);
+  cursor:pointer;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+button:hover{ background:var(--accent-light); }
+button.secondary{
+  background:none;
+  border:1px solid var(--muted);
+  color:var(--muted);
+}
+button:disabled{ opacity:.5; cursor:not-allowed; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--accent);
+  border-radius:8px;
+  padding:12px;
+}
+table{
+  width:100%;
+  border-collapse:separate; border-spacing:0 6px;
+}
+th,td{ text-align:left; padding:8px 10px; }
+thead th{ font-size:13px; color:var(--muted); text-transform:uppercase; }
+tbody tr{ background:#152117; }
+tbody td:first-child{ border-left:3px solid var(--accent-light); }
+
+.pill{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:4px;
+  background:var(--accent);
+  color:var(--text);
+  font-size:12px;
+}
+.muted{ color:var(--muted); }
+.alert{
+  background:#3c2c2c;
+  border:1px solid #775;
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:13px;
+  color:#f0e6c6;
+}
+
+/* Цифровий таймер */
+.clock-wrap{ display:flex; align-items:center; gap:12px; }
+.clock-label{ font-size:12px; text-transform:uppercase; letter-spacing:1px; }
+.clock{
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 34px;
+  line-height: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background:#0e1a13;
+  text-shadow: 0 0 6px rgba(118,255,164,.25);
+}
+
+/* Історія (без дат) */
+.history-list{ display:flex; flex-direction:column; gap:10px; }
+.history-item{
+  border:1px solid var(--accent);
+  background:#142017;
+  border-radius:8px;
+  padding:10px;
+}
+.history-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:bold; text-transform:uppercase; letter-spacing:.5px;
+}
+.badge{
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  border:1px solid var(--accent-light); color:#dfe6dd; background:#0f1a12; font-size:12px;
+}
+.place-line{
+  margin-top:8px; display:flex; flex-direction:column; gap:4px;
+  font-family: "Courier New", monospace;
+}
+.place-row{
+  display:flex; gap:8px; align-items:center;
+}
+.place{
+  width:28px; text-align:right; font-weight:bold; color:#b7c7b7;
+}
+.name{
+  flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.time{
+  min-width:90px; text-align:right; font-weight:bold; color:#e8f1e6;
+}
+.empty-muted{
+  color:var(--muted);
+}

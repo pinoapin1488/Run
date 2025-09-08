@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Рейтинг забігу</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Рейтинг забігу</h1>
+
+  <!-- Банер read-only, якщо відкрито публічну ссилку -->
+  <div id="viewerBanner" class="card" style="display:none; margin-bottom:12px;">
+    <div class="muted">Режим перегляду (read-only): дані з посилання. Кнопки вимкнені.</div>
+  </div>
+
+  <!-- Цифрове табло-таймер -->
+  <div class="card clock-wrap">
+    <div class="clock-label muted">Час гонки</div>
+    <div id="raceClock" class="clock">00:00.000</div>
+  </div>
+
+  <div class="card bar">
+    <input id="runnerName" placeholder="Ім’я бігуна" />
+    <button id="addBtn">Додати бігуна</button>
+    <span class="muted">• Спочатку «Старт гонки», потім фіксуй «Фініш»</span>
+  </div>
+
+  <div class="bar">
+    <button id="startBtn">Старт гонки</button>
+    <button id="resetBtn" class="secondary">Скинути</button>
+    <button id="finishRaceBtn" class="secondary">Завершити забіг → в історію</button>
+    <span id="status" class="pill">Очікуємо старт…</span>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ім’я</th>
+          <th>Час</th>
+          <th>Дія</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="bar">
+    <button id="exportCsvBtn">Експорт CSV</button>
+    <button id="shareLinkBtn">Публічна ссилка</button>
+    <button id="clearAllBtn" class="secondary">Очистити все (БД)</button>
+  </div>
+
+  <div class="card" id="historyCard">
+    <h2 class="muted" style="margin-bottom:8px;">Історія забігів</h2>
+    <div id="historyList" class="history-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
